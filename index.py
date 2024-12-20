@@ -10,9 +10,9 @@ import json
 ###
 
 # Khởi tạo MediaPipe Hand
-mp_hands = mp.solutions.hands # Module xử lí bàn tay
-hands = mp_hands.Hands() # dùng để nhận diện bàn tay - xử lý đầu vào là ảnh RGB
-mp_draw = mp.solutions.drawing_utils # Vẽ các điểm landmark và kết nối chúng
+mp_hands = mp.solutions.hands
+hands = mp_hands.Hands()
+mp_draw = mp.solutions.drawing_utils
 
 server = WebsocketServer(host='127.0.0.1', port=12345)
 def send_frame_to_web(frame):
@@ -34,7 +34,7 @@ def detect_gesture(fingers):
     return None
 
 def send_command_to_game(command):
-    print(f"Sending command to game: {command}")  # Log lệnh trước khi gửi
+    print(f"Sending command to game: {command}")
     message = json.dumps({"type": "command", "data": command})
     server.send_message_to_all(message)
 
@@ -43,7 +43,7 @@ def on_new_client(client, server):
     print(f"New client connected: {client}")
 
 server.set_fn_new_client(on_new_client)
-server.run_forever(threaded=True)  # Chạy WebSocket trong thread riêng
+server.run_forever(threaded=True)
 
 pTime = 0
 cap = cv2.VideoCapture(0)
