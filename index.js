@@ -330,19 +330,6 @@ class Board {
     }
   }
 
-  // Kiểm tra và xử lý khi hoàn thành một hàng
-  // handleCompleteRows() {
-  //   const latestGrid = board.grid.filter(row => row.some(col => col === WHITE_ID));
-
-  //   const newScore = ROWS - latestGrid.length; // Số hàng đã hoàn thành
-  //   const newRows = Array.from({ length: newScore }, () => Array(COLS).fill(WHITE_ID));
-
-  //   if (newScore) {
-  //     audioCplRows.play();
-  //     board.grid = [...newRows, ...latestGrid];
-  //     this.handleScore(newScore * 10);
-  //   }
-  // }
   handleCompleteRows() {
     const completedRows = []; // Danh sách các hàng hoàn thành
     for (let row = 0; row < this.grid.length; row++) {
@@ -747,13 +734,6 @@ function updateLeaderboardImmediate(playername) {
         leaderboard[youIndex].score = Math.max(leaderboard[youIndex].score, highScore);
     }
     else {
-        // for (let i = 0; i < leaderboard.length; i++) {
-        //     if (highScore > leaderboard[i].score) {
-        //     leaderboard.splice(i, 0, { name: playername, score: highScore});
-        //     youIndex = true;
-        //     break;
-        //     }
-        // }
         leaderboard.splice(11, 0, { name: playername, score: highScore});
     }
     
