@@ -78,7 +78,7 @@ hands.onResults((results) => {
           // Xử lí cho ngón cái - khối gạch qua phải
           console.log(`Toa do X: ${landmarks[finger_id[0]].x}`);
           console.log(`Toa do X -2: ${landmarks[finger_id[0] - 2].x}`);
-          if (landmarks[finger_id[0]].x + 0.01 < (landmarks[finger_id[0] - 2].x))
+          if (landmarks[finger_id[0]].x < (landmarks[finger_id[0] - 2].x - 0.015))
             fingers[4] = 1;
 
           // Xử lí cho ngón út - khối gạch qua trái
