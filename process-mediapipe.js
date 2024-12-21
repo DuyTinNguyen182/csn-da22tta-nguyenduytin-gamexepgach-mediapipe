@@ -2,11 +2,11 @@ const videoElement = document.querySelector('.input_video');
 const canvasElement = document.querySelector('.output_canvas');
 const canvasCtx = canvasElement.getContext('2d');
 
+const message2Hand = document.getElementById('message-2hand');
+
 let finger_id = [4, 8, 12, 16, 20];
 
 let previousMoveTime = 0; // Thời gian thực thi trước đó
-let previousTime = 0;
-let fps = 0;
 
 function detect_gesture(fingers) {
   if (JSON.stringify(fingers) === JSON.stringify([1, 1, 1, 1, 1])) {
@@ -36,15 +36,6 @@ hands.onResults((results) => {
 
   const currentTime = performance.now(); // Thời gian hiện tại
 
-  // Tính Fps
-  fps = 1 / (currentTime - previousTime);
-  previousTime = currentTime;
-
-  // Vẽ Fps lên khung hình
-  canvasCtx.font = "16px Arial"; // Đặt font chữ
-  canvasCtx.fillStyle = "red"; // Màu chữ
-  canvasCtx.fillText(`FPS: ${fps.toFixed(2)}`, 10, 20); // Hiển thị FPS tại góc trên bên trái
-
   canvasElement.width = videoElement.videoWidth;
   canvasElement.height = videoElement.videoHeight;
 
@@ -59,8 +50,10 @@ hands.onResults((results) => {
       const handedness = results.multiHandedness[index].label; // 'Left' hoặc 'Right'
       console.log(`Hand ${index + 1}: ${handedness}`);
 
-      if ((index + 1) !== 1) {
+      if (results.multiHandLandmarks.length >= 2) {
         console.log('Chi su dung 1 ban tay');
+        message2Hand.style.display = 'block';
+        return;
       } else {
         let fingers = [0, 0, 0, 0, 0];
         if (handedness === 'Left') { // Do lật khung hình nên Left sẽ là bàn tay phải và ngược lại
@@ -114,6 +107,7 @@ hands.onResults((results) => {
           }
           previousMoveTime = currentTime;
         }
+        message2Hand.style.display = 'none';
       }
     });
 
