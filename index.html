@@ -10,6 +10,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Press+Start+2P&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils"></script>
 </head>
 <body>
   <audio id="bgmusic" src="Audios/bgr_music.mp3" loop></audio>
@@ -24,8 +27,8 @@
       <button id="start-game">Bắt đầu chơi</button>
     </div>
   </div>
-  
-  <div id="media-pipe" class="media-pipe"><canvas id="videoCanvas"></canvas></div>
+  <video class="input_video" style="display:none;"></video>
+  <div id="media-pipe" class="media-pipe"><canvas class="output_canvas" id="videoCanvas"></canvas></div>
   <div class="instruct" id="instruct"></div>
   <div id="ranking"><div id="title_ranking">Bảng xếp hạng</div><ul id="leaderboard"></ul></div>
   <div id="name"><!--TETRIS--></div>
@@ -55,7 +58,7 @@
     </div>
   </div>
 
-  <script src="index.js"></script>
-  <script src="connect_mediapipe.js"></script>
+  <script src="script.js"></script>
+  <script src="process-mediapipe.js"></script>
 </body>
 </html>
