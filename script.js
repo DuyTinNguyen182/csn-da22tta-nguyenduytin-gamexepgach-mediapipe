@@ -222,8 +222,8 @@ playGameButton.addEventListener('click', () => {
     console.log(`Player name is: ${playerName}`);
     updateLeaderboardImmediate(playerName);
     startScreen.style.display = 'none';
-    // MPipe.style.display = 'block';
-    // instruct.style.display = 'block';
+    MPipe.style.display = 'block';
+    instruct.style.display = 'block';
     ranking.style.display = 'block';
 });
 
@@ -297,7 +297,7 @@ class Board {
     );
     
     // Đổ bóng ở dưới và bên phải để tạo chiều sâu
-    this.ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
+    this.ctx.fillStyle = 'rgba(0, 0, 0, 0.3)';
     this.ctx.fillRect(
       xAxis * BLOCK_SIZE + BLOCK_SIZE * 0.9,
       yAxis * BLOCK_SIZE + BLOCK_SIZE * 0.1,
@@ -312,7 +312,7 @@ class Board {
     );
 
     // Vẽ đường viền xung quanh ô
-    this.ctx.strokeStyle = 'black';
+    this.ctx.strokeStyle = 'rgba(0, 0, 0, 0.2)';
     this.ctx.strokeRect(
       xAxis * BLOCK_SIZE,
       yAxis * BLOCK_SIZE,
@@ -330,6 +330,19 @@ class Board {
     }
   }
 
+  // Kiểm tra và xử lý khi hoàn thành một hàng
+  // handleCompleteRows() {
+  //   const latestGrid = board.grid.filter(row => row.some(col => col === WHITE_ID));
+
+  //   const newScore = ROWS - latestGrid.length; // Số hàng đã hoàn thành
+  //   const newRows = Array.from({ length: newScore }, () => Array(COLS).fill(WHITE_ID));
+
+  //   if (newScore) {
+  //     audioCplRows.play();
+  //     board.grid = [...newRows, ...latestGrid];
+  //     this.handleScore(newScore * 10);
+  //   }
+  // }
   handleCompleteRows() {
     const completedRows = []; // Danh sách các hàng hoàn thành
     for (let row = 0; row < this.grid.length; row++) {
@@ -734,6 +747,13 @@ function updateLeaderboardImmediate(playername) {
         leaderboard[youIndex].score = Math.max(leaderboard[youIndex].score, highScore);
     }
     else {
+        // for (let i = 0; i < leaderboard.length; i++) {
+        //     if (highScore > leaderboard[i].score) {
+        //     leaderboard.splice(i, 0, { name: playername, score: highScore});
+        //     youIndex = true;
+        //     break;
+        //     }
+        // }
         leaderboard.splice(11, 0, { name: playername, score: highScore});
     }
     
@@ -748,7 +768,7 @@ displayLeaderboard();
 console.log(`Player name is: ${playerName}`);
 // showBonus("+5 Bonus!");
 // Khi trang được tải, reset lại điểm cao nhất
-window.onload = function() {
-  localStorage.setItem('highScore', 0); // Reset điểm cao nhất về 0
-}
+// window.onload = function() {
+//   localStorage.setItem('highScore', 0); // Reset điểm cao nhất về 0
+// }
 console.table(board.grid);
