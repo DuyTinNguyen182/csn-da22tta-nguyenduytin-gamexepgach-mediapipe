@@ -2,7 +2,7 @@
 
 ## Mô tả đồ án
 
-Đây là dự án phát triển một trò chơi xếp gạch (Tetris) trên nền tảng web, sử dụng **MediaPipe** để nhận diện cử chỉ tay và điều khiển các thao tác trong game. Thay vì dùng bàn phím hoặc cảm ứng, người chơi có thể điều khiển game thông qua các cử chỉ tay, mang đến một trải nghiệm chơi game mới lạ và hấp dẫn.
+Đây là dự án phát triển một trò chơi xếp gạch (Tetris) trên nền tảng web, sử dụng **MediaPipe** để nhận diện cử chỉ tay và điều khiển các thao tác trong game. Thay vì dùng bàn phím hoặc chuột, người chơi có thể điều khiển game thông qua các cử chỉ tay, mang đến một trải nghiệm chơi game mới lạ và hấp dẫn.
 
 ## Các tính năng chính
 
