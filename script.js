@@ -387,7 +387,7 @@ class Board {
       const fadeInterval = setInterval(() => {
         rows.forEach(row => {
           if (col < COLS) {
-            this.grid[row][col] = WHITE_ID; // Làm "biến mất" từng ô từ trái qua
+            this.grid[row][col] = WHITE_ID; // Làm biến mất từng ô từ trái qua
           }
         });
         this.drawBoard();
