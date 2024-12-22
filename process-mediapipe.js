@@ -88,7 +88,7 @@ hands.onResults((results) => {
         console.log(`Fingers: ${fingers}`);
         const command = detect_gesture(fingers);
         console.log(`Command: ${command}`);
-        if (!board.gameOver && board.isPlaying && !isPaused && (currentTime - previousMoveTime > 300)) {
+        if (!board.gameOver && board.isPlaying && !isPaused && (currentTime - previousMoveTime > 400)) {
           switch (command) {
             case 'LEFT':
               brick.moveLeft();
