@@ -10,7 +10,7 @@ let previousMoveTime = 0; // Thời gian thực thi trước đó
 
 function detect_gesture(fingers) {
   if (JSON.stringify(fingers) === JSON.stringify([1, 1, 1, 1, 1])) {
-    return "UP";
+    return "ROTATE";
   } else if(JSON.stringify(fingers) === JSON.stringify([0, 1, 1, 0, 0])){
     return "DOWN";
   } else if (JSON.stringify(fingers) === JSON.stringify([1, 0, 0, 0, 0])) {
@@ -48,10 +48,10 @@ hands.onResults((results) => {
   if (results.multiHandLandmarks) {
     results.multiHandLandmarks.forEach((landmarks, index) => {
       const handedness = results.multiHandedness[index].label; // 'Left' hoặc 'Right'
-      console.log(`Hand ${index + 1}: ${handedness}`);
+      // console.log(`Hand ${index + 1}: ${handedness}`);
 
-      if (results.multiHandLandmarks.length >= 2) {
-        console.log('Chi su dung 1 ban tay');
+      if (results.multiHandLandmarks.length >= 2 && MPipe.style.display == 'block') {
+        // console.log('Chi su dung 1 ban tay');
         message2Hand.style.display = 'block';
         return;
       } else {
@@ -69,8 +69,8 @@ hands.onResults((results) => {
         }
         else{ // Bàn tay trái
           // Xử lí cho ngón cái - khối gạch qua phải
-          //console.log(`Toa do X: ${landmarks[finger_id[0]].x}`);
-          //console.log(`Toa do X -2: ${landmarks[finger_id[0] - 2].x}`);
+          // console.log(`Toa do X: ${landmarks[finger_id[0]].x}`);
+          // console.log(`Toa do X -2: ${landmarks[finger_id[0] - 2].x}`);
           if (landmarks[finger_id[0]].x < (landmarks[finger_id[0] - 2].x - 0.015))
             fingers[4] = 1;
 
@@ -85,9 +85,9 @@ hands.onResults((results) => {
         }
                     
 
-        //console.log(`Fingers: ${fingers}`);
+        console.log(`Fingers: ${fingers}`);
         const command = detect_gesture(fingers);
-        //console.log(`Command: ${command}`);
+        // console.log(`Command: ${command}`);
         if (!board.gameOver && board.isPlaying && !isPaused && (currentTime - previousMoveTime > 400)) {
           switch (command) {
             case 'LEFT':
@@ -99,7 +99,7 @@ hands.onResults((results) => {
             case 'DOWN':
               brick.moveDown();
               break;
-            case 'UP':
+            case 'ROTATE':
               brick.rotate();
               break;
             // default:

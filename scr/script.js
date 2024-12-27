@@ -227,14 +227,6 @@ playGameButton.addEventListener('click', () => {
     ranking.style.display = 'block';
 });
 
-// Cập nhật điểm cao nhất
-function updateHighScore() {
-  if (board.score > highScore) {
-    highScore = board.score;
-    localStorage.setItem('highScore', highScore);
-    document.getElementById('high-score').innerText = highScore;
-  }
-}
 
 // Thiết lập kích thước cho canvas theo số hàng và cột
 ctx.canvas.width = COLS * BLOCK_SIZE;
@@ -263,25 +255,6 @@ class Board {
   generateWhiteBoard() {
     return Array.from({ length: ROWS }, () => Array(COLS).fill(WHITE_ID));
   }
-
-  // Vẽ một ô trên bảng
-  /*drawCell(xAxis, yAxis, colorId) {
-    this.ctx.fillStyle = COLOR_PALETTE[colorId] || COLOR_PALETTE[WHITE_ID];
-    this.ctx.fillRect(
-      xAxis * BLOCK_SIZE,
-      yAxis * BLOCK_SIZE,
-      BLOCK_SIZE,
-      BLOCK_SIZE
-    );
-    this.ctx.fillStyle = 'black';
-    this.ctx.strokeRect(
-      xAxis * BLOCK_SIZE,
-      yAxis * BLOCK_SIZE,
-      BLOCK_SIZE,
-      BLOCK_SIZE
-    );
-    
-  }*/
 
   drawCell(xAxis, yAxis, colorId) {
 
@@ -330,19 +303,6 @@ class Board {
     }
   }
 
-  // Kiểm tra và xử lý khi hoàn thành một hàng
-  // handleCompleteRows() {
-  //   const latestGrid = board.grid.filter(row => row.some(col => col === WHITE_ID));
-
-  //   const newScore = ROWS - latestGrid.length; // Số hàng đã hoàn thành
-  //   const newRows = Array.from({ length: newScore }, () => Array(COLS).fill(WHITE_ID));
-
-  //   if (newScore) {
-  //     audioCplRows.play();
-  //     board.grid = [...newRows, ...latestGrid];
-  //     this.handleScore(newScore * 10);
-  //   }
-  // }
   handleCompleteRows() {
     const completedRows = []; // Danh sách các hàng hoàn thành
     for (let row = 0; row < this.grid.length; row++) {
@@ -387,7 +347,7 @@ class Board {
       const fadeInterval = setInterval(() => {
         rows.forEach(row => {
           if (col < COLS) {
-            this.grid[row][col] = WHITE_ID; // Làm biến mất từng ô từ trái qua
+            this.grid[row][col] = WHITE_ID; // Làm "biến mất" từng ô từ trái qua
           }
         });
         this.drawBoard();
@@ -532,6 +492,15 @@ class Brick {
   }
 }
 
+// Cập nhật điểm cao nhất
+function updateHighScore() {
+  if (board.score > highScore) {
+    highScore = board.score;
+    localStorage.setItem('highScore', highScore);
+    document.getElementById('high-score').innerText = highScore;
+  }
+}
+
 // Hàm tạo và hiển thị khối gạch mới
 function generateNewBrick() {
   brick = nextBrick || new Brick(Math.floor(Math.random() * BRICK_LAYOUT.length));
@@ -577,9 +546,6 @@ function showGameOverMessage() {
     document.getElementById('play').innerText = 'Play';
   };
 }
-// Khởi tạo bảng
-let board = new Board(ctx);
-board.drawBoard();
 
 // Xử lý sự kiện khi nhấn nút "Play" để bắt đầu hoặc reset trò chơi
 document.getElementById('play').addEventListener('click', () => {
@@ -595,7 +561,7 @@ document.getElementById('play').addEventListener('click', () => {
     audioBg.play();
 
     generateNewBrick();
-
+    
     refresh = setInterval(() => {
       if (!board.gameOver && !isPaused) {
         brick.moveDown();
@@ -684,38 +650,6 @@ document.addEventListener('keydown', (e) => {
     }
   }
 });
-// const socket = new WebSocket('ws://127.0.0.1:12345');
-
-// socket.onopen = () => {
-//   console.log('Connected to WebSocket server');
-// };
-
-// socket.onmessage = (event) => {
-//   const command = event.data;
-//   console.log(`Received command: ${command}`);  // Log lệnh nhận được
-//   if (!board.gameOver && board.isPlaying && !isPaused) {
-//     switch (command) {
-//       case 'LEFT':
-//         brick.moveLeft();
-//         break;
-//       case 'RIGHT':
-//         brick.moveRight();
-//         break;
-//       case 'DOWN':
-//         brick.moveDown();
-//         break;
-//       case 'UP':
-//         brick.rotate();
-//         break;
-//       default:
-//         break;
-//     }
-//   }
-// };
-
-// socket.onclose = () => {
-//   console.log('Disconnected from WebSocket server');
-// };
 
 let leaderboard = [
   { name: "Player1", score: 100 },
@@ -761,6 +695,10 @@ function updateLeaderboardImmediate(playername) {
     leaderboard.sort((a, b) => b.score - a.score);
     displayLeaderboard();
 }
+
+// Khởi tạo bảng
+let board = new Board(ctx);
+board.drawBoard();
 
 // Hiển thị bảng xếp hạng ban đầu
 // updateLeaderboardImmediate(playerName);
