@@ -9,7 +9,7 @@
 - **Điều khiển bằng cử chỉ tay**: Sử dụng MediaPipe để nhận diện các cử chỉ tay và sử dụng chúng để điều khiển các thao tác như xoay, di chuyển và rơi gạch.
 - **Chơi game xếp gạch**: Trò chơi hoạt động theo các quy tắc truyền thống của game xếp gạch, nơi người chơi phải xếp các khối gạch vào các ô để xóa các dòng hoàn chỉnh.
 - **Giao diện người dùng thân thiện**: Giao diện được thiết kế đơn giản và dễ sử dụng với các thông tin về điểm số và level.
-- **Hỗ trợ âm thanh**: Các âm thanh đặc biệt như tiếng gạch rơi, xoay và xóa dòng giúp tăng cường trải nghiệm chơi game.
+- **Hỗ trợ hiệu ứng và âm thanh**: Các hiệu ứng xóa hàng, điểm thưởng, âm thanh đặc biệt như tiếng gạch rơi, xóa hàng giúp cải thiện trải nghiệm chơi game.
 ## Các bước thực hiện đồ án
 ### Bước 1: Nghiên cứu và thu thập thông tin
 Tìm hiểu về trò chơi xếp gạch, bao gồm luật chơi, các cơ chế điều khiển, và cách hoạt động.
