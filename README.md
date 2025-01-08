@@ -38,7 +38,7 @@
 - Thiết kế hướng dẫn cho người chơi.
 ## Cách chạy chương trình
 - Cài đặt Visual Studio Code về máy.
-- Cài đặt một số Extensions cần thiết để chạy chương trình như JavaScript, Live Sever.
+- Cài đặt một số Extensions cần thiết để chạy chương trình như JavaScript, Live Server.
 - Tải toàn bộ mã nguồn trong thư mục scr, sau đó mở bằng Visual Studio Code và chạy bằng Live Server.  
 ## Thông tin liên hệ
 - Sinh viên thực hiện: Nguyễn Duy Tín  
