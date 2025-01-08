@@ -35,7 +35,11 @@
 - Kiểm tra tính chính xác của các tính năng game (di chuyển, xoay, thả gạch xuống nhanh, xóa hàng, điểm số,…).  
 ### Bước 5: Hoàn thiện và tích hợp tích năng bổ sung  
 - Cải thiện giao diện và trải nghiệm người dùng (thêm âm thanh, hiệu ứng, bảng xếp hạng).  
-- Thiết kế hướng dẫn cho người chơi.  
+- Thiết kế hướng dẫn cho người chơi.
+## Cách chạy chương trình
+- Cài đặt Visual Studio Code về máy.
+- Cài đặt một số Extensions cần thiết để chạy chương trình như JavaScript, Live Sever.
+- Tải toàn bộ mã nguồn trong thư mục scr, sau đó mở bằng Visual Studio Code và chạy bằng Live Server.  
 ## Thông tin liên hệ
 - Sinh viên thực hiện: Nguyễn Duy Tín  
 - Lớp: DA22TTA  
