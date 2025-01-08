@@ -2,14 +2,7 @@
 
 ## Mô tả đồ án
 
-Đây là đồ án phát triển một trò chơi xếp gạch (Tetris) trên nền tảng web, sử dụng **MediaPipe** để nhận diện cử chỉ tay và điều khiển các thao tác trong game. Thay vì dùng bàn phím hoặc chuột, người chơi có thể điều khiển game thông qua các cử chỉ tay, mang đến một trải nghiệm chơi game mới lạ và hấp dẫn.
-
-## Các tính năng chính
-
-- **Điều khiển bằng cử chỉ tay**: Sử dụng MediaPipe để nhận diện các cử chỉ tay và sử dụng chúng để điều khiển các thao tác như xoay, di chuyển và rơi gạch.
-- **Chơi game xếp gạch**: Trò chơi hoạt động theo các quy tắc truyền thống của game xếp gạch, nơi người chơi phải xếp các khối gạch vào các ô để xóa các dòng hoàn chỉnh.
-- **Giao diện người dùng thân thiện**: Giao diện được thiết kế đơn giản và dễ sử dụng với các thông tin về điểm số và level.
-- **Hỗ trợ hiệu ứng và âm thanh**: Các hiệu ứng xóa hàng, điểm thưởng, âm thanh đặc biệt như tiếng gạch rơi, xóa hàng giúp cải thiện trải nghiệm chơi game.
+Đây là đồ án phát triển một trò chơi xếp gạch (Tetris) trên nền tảng web, sử dụng **MediaPipe** để nhận diện cử chỉ tay và điều khiển các thao tác trong game. Thay vì dùng bàn phím hoặc chuột, người chơi có thể điều khiển game thông qua các cử chỉ tay, mang đến một trải nghiệm chơi game mới lạ và hấp dẫn.  
 ## Các bước thực hiện đồ án
 ### Bước 1: Nghiên cứu và thu thập thông tin
 - Tìm hiểu về trò chơi xếp gạch, bao gồm luật chơi, các cơ chế điều khiển, và cách hoạt động.  
