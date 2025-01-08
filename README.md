@@ -43,9 +43,6 @@ Phân tích yêu cầu:
 ### Bước 5: Hoàn thiện và tích hợp tích năng bổ sung  
 - Cải thiện giao diện và trải nghiệm người dùng (thêm âm thanh, hiệu ứng, bảng xếp hạng).  
 - Thiết kế hướng dẫn cho người chơi.  
-### Bước 6: Báo cáo và trình bày kết quả  
-- Hoàn thiện tài liệu đồ án bao gồm quyển báo cáo, slide thuyết trình, poster, repository trên Github để chứa mã nguồn và tài liệu đã thực hiện.  
-- Chuẩn bị bản demo sản phẩm và thuyết trình kết quả đạt được.
 ## Thông tin liên hệ
 - Sinh viên thực hiện: Nguyễn Duy Tín  
 - Lớp: DA22TTA  
