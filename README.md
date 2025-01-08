@@ -47,10 +47,10 @@ Phân tích yêu cầu:
 - Hoàn thiện tài liệu đồ án bao gồm quyển báo cáo, slide thuyết trình, poster, repository trên Github để chứa mã nguồn và tài liệu đã thực hiện.  
 - Chuẩn bị bản demo sản phẩm và thuyết trình kết quả đạt được.
 ## Thông tin liên hệ
-Sinh viên thực hiện: Nguyễn Duy Tín  
-Lớp: DA22TTA  
-MSSV: 110122182  
-Email: duytinnguyen84@gmail.com
-Số điện thoại: 0794325729
+- Sinh viên thực hiện: Nguyễn Duy Tín  
+- Lớp: DA22TTA  
+- MSSV: 110122182  
+- Email: duytinnguyen84@gmail.com  
+- Số điện thoại: 0794325729
 
 
