@@ -18,9 +18,9 @@
 - Tìm hiểu các công nghệ web cần thiết như HTML, CSS, JS để xây dựng giao diện và logic trò chơi.  
 - Khảo sát các game xếp gạch có sẵn để phân tích ưu, nhược điểm và định hướng cải tiến.
 ### Bước 2: Phân tích yêu cầu và thiết kế hệ thống
-Phân tích yêu cầu:  
-- Xác định các cử chỉ tay cần nhận diện để thực hiện các hành động như: di chuyển, xoay, thả gạch xuống nhanh.  
-- Xác định các tính năng chính của game, như bắt đầu, chơi, lưu điểm và kết thúc.  
+- Phân tích yêu cầu:  
+	+ Xác định các cử chỉ tay cần nhận diện để thực hiện các hành động như: di chuyển, xoay, thả gạch xuống nhanh.  
+	+ Xác định các tính năng chính của game, như bắt đầu, chơi, lưu điểm và kết thúc.  
 - Thiết kế hệ thống kiến trúc tổng quan bao gồm:  
 	+ Phần giao diện (Front-end): Xây dựng bố cục game, bảng điểm, và hiển thị gạch.  
 	+ Phần xử lý cử chỉ: Tích hợp MediaPipe để xử lý dữ liệu từ camera.  
