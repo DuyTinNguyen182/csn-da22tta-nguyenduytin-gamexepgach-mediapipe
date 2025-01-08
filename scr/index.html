@@ -30,7 +30,7 @@
   <video class="input_video" style="display:none;"></video>
   <div id="media-pipe" class="media-pipe"><canvas class="output_canvas" id="videoCanvas"></canvas></div>
   <div class="instruct" id="instruct"></div>
-  <div id="ranking"><div id="title_ranking">Bảng xếp hạng</div><ul id="leaderboard"></ul></div>
+  <div id="ranking"><div id="title_ranking">Bảng xếp hạng</div><div  id="leaderboard"></div></div>
   <div id="name"><!--TETRIS--></div>
   <div id="message-2hand">Chỉ sử dụng 1 bàn tay!</div>
   <div id="game-over" class="overlay">
@@ -59,7 +59,8 @@
     </div>
   </div>
 
-  <script src="script.js"></script>
-  <script src="process-mediapipe.js"></script>
+  <script type="module" src="script.js"></script>
+  <script type="module" src="connect_firebase.js"></script>
+  
 </body>
 </html>
